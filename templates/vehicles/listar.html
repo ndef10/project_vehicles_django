@@ -1,0 +1,35 @@
+{% extends 'layouts.html' %}
+
+{% block content %}
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Serial Carroceria</th>
+        <th>Serail Motor</th>
+        <th>Categoria</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+        {% for vehiculo in vehiculos %}
+      <tr>
+        <!-- <th scope="row">1</th> -->
+        <td>{{ vehiculo.id }}</td>
+        <td>{{ vehiculo.marca }}</td>
+        <td>{{ vehiculo.modelo }}</td>
+        <td>{{ vehiculo.serial_carroceria }}</td>
+        <td>{{ vehiculo.serial_motor }}</td>
+        <td>{{ vehiculo.categoria }}</td>
+        <td>{{ vehiculo.precio }}</td>
+      </tr>
+        {% endfor %}
+    </tbody>
+    
+  </table>
+
+{% endblock %}
