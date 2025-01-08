@@ -25,7 +25,21 @@ def v_add(request):
 
 def v_listar(request):
     vehiculos = Vehiculo.objects.all()
+
+    por_precio = {
+        'bajo': vehiculos.filter(precio__lte=10000), 
+        'medio': vehiculos.filter(precio__gt=10000, precio__lte=30000),  
+        'alto': vehiculos.filter(precio__gt=30000)
+    }
+
+    condicion = {
+        'b': 'Bajo',
+        'm': 'Medio',
+        'a': 'Alto'
+    }
+    
     context = {
-        'vehiculos': vehiculos
+        'por_precio': por_precio,
+        'condicion': condicion
     }
     return render(request, 'vehicles/listar.html', context)

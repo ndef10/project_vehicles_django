@@ -3,19 +3,6 @@ from django.db import models
 # Create your models here.
 
 class Vehiculo(models.Model):
-
-    # MARCAS = [
-    #     ('Fiat', 'Fiat'),
-    #     ('Chevrolet', 'Chevrolet'),
-    #     ('Ford', 'Ford'),
-    #     ('Toyota', 'Toyota'),
-    # ]
-    
-    # CATEGORIAS = [
-    #     ('Particular', 'Particular'),
-    #     ('Transporte', 'Transporte'),
-    #     ('Carga', 'Carga'),
-    # ]
     
     marca = models.CharField(max_length=20, default='Ford')
     modelo = models.CharField(max_length=100)

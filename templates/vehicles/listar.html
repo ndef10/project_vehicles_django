@@ -12,11 +12,12 @@
         <th>Serail Motor</th>
         <th>Categoria</th>
         <th>Precio</th>
+        <th>Condicion de Precio</th>
       </tr>
     </thead>
     
     <tbody>
-        {% for vehiculo in vehiculos %}
+        {% for vehiculo in por_precio.bajo %}
       <tr>
         <!-- <th scope="row">1</th> -->
         <td>{{ vehiculo.id }}</td>
@@ -26,6 +27,35 @@
         <td>{{ vehiculo.serial_motor }}</td>
         <td>{{ vehiculo.categoria }}</td>
         <td>{{ vehiculo.precio }}</td>
+        <td>{{ condicion.b }}</td>
+      </tr>
+        {% endfor %}
+
+        {% for vehiculo in por_precio.medio %}
+      <tr>
+        <!-- <th scope="row">1</th> -->
+        <td>{{ vehiculo.id }}</td>
+        <td>{{ vehiculo.marca }}</td>
+        <td>{{ vehiculo.modelo }}</td>
+        <td>{{ vehiculo.serial_carroceria }}</td>
+        <td>{{ vehiculo.serial_motor }}</td>
+        <td>{{ vehiculo.categoria }}</td>
+        <td>{{ vehiculo.precio }}</td>
+        <td>{{ condicion.m }}</td>
+      </tr>
+        {% endfor %}
+
+        {% for vehiculo in por_precio.alto %}
+      <tr>
+        <!-- <th scope="row">1</th> -->
+        <td>{{ vehiculo.id }}</td>
+        <td>{{ vehiculo.marca }}</td>
+        <td>{{ vehiculo.modelo }}</td>
+        <td>{{ vehiculo.serial_carroceria }}</td>
+        <td>{{ vehiculo.serial_motor }}</td>
+        <td>{{ vehiculo.categoria }}</td>
+        <td>{{ vehiculo.precio }}</td>
+        <td>{{ condicion.a }}</td>
       </tr>
         {% endfor %}
     </tbody>
